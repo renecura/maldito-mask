@@ -1,0 +1,146 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/fondos/STScI-01F67S7HC1MV9W8J58JH4Z482B.png" type="Texture" id=1]
+[ext_resource path="res://assets/logos-pgj/Patagonia Game Jam_03.png" type="Texture" id=2]
+[ext_resource path="res://assets/Theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/UI/BotonPlay.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/BotonFondo.png" type="Texture" id=5]
+[ext_resource path="res://escenas/Menu.gd" type="Script" id=6]
+[ext_resource path="res://assets/UI/BotonMenu.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 512, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 362, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 362, -0.25, 0, 0.25, 0, 342, -0.25, 0, 0.25, 0, 362, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="Fondo" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Imagen" type="TextureRect" parent="Fondo"]
+self_modulate = Color( 0.345098, 0.235294, 0.588235, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+
+[node name="LogoPGJ" type="TextureRect" parent="Fondo"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -180.0
+margin_right = -643.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Titulo" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 240.0
+theme = ExtResource( 3 )
+text = "PATAGONIA GAME JAM"
+align = 1
+valign = 1
+
+[node name="BotonStart" type="TextureButton" parent="."]
+self_modulate = Color( 1, 0.0352941, 0.45098, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = 2.0
+margin_right = 128.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Detalle" type="TextureRect" parent="BotonStart"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.5
+margin_top = -52.5
+margin_right = 52.5
+margin_bottom = 52.5
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BotonStart"]
+autoplay = "idle"
+anims/RESET = SubResource( 1 )
+anims/idle = SubResource( 2 )
+
+[node name="BotonEquipo" type="TextureButton" parent="."]
+self_modulate = Color( 0.811765, 0.352941, 0, 1 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 644.0
+margin_top = -141.0
+margin_right = -5.0
+margin_bottom = -56.0
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="Detalle" type="TextureRect" parent="BotonEquipo"]
+self_modulate = Color( 1, 0.626, 0.34, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.0
+margin_top = -38.0
+margin_right = 35.0
+margin_bottom = 38.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[connection signal="button_down" from="BotonStart" to="." method="_on_Start"]
+[connection signal="button_down" from="BotonEquipo" to="." method="_on_BotonEquipo"]
