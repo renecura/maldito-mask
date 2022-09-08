@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://elementos/Cielo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://elementos/data/Dereida.tres" type="Resource" id=2]
+[ext_resource path="res://elementos/data/Faradan.tres" type="Resource" id=3]
+[ext_resource path="res://elementos/data/Erm.tres" type="Resource" id=4]
+[ext_resource path="res://elementos/data/Golosus.tres" type="Resource" id=5]
+[ext_resource path="res://elementos/data/Calandria.tres" type="Resource" id=6]
+[ext_resource path="res://elementos/data/Bersekus.tres" type="Resource" id=7]
+[ext_resource path="res://elementos/data/Aries.tres" type="Resource" id=8]
+[ext_resource path="res://elementos/Planeta.tscn" type="PackedScene" id=9]
+[ext_resource path="res://niveles/Nivel.gd" type="Script" id=10]
+
+[node name="Introduccion" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+
+[node name="Referencia" parent="." instance=ExtResource( 1 )]
+margin_right = -412.0
+
+[node name="Planetas" type="Control" parent="."]
+
+[node name="Aries" parent="Planetas" instance=ExtResource( 9 )]
+margin_left = 323.0
+margin_top = 61.0
+margin_right = 387.0
+margin_bottom = 125.0
+data = ExtResource( 8 )
+
+[node name="Bersekus" parent="Planetas" instance=ExtResource( 9 )]
+visible = false
+margin_left = 693.0
+margin_top = 169.0
+margin_right = 757.0
+margin_bottom = 233.0
+data = ExtResource( 7 )
+
+[node name="Calandria" parent="Planetas" instance=ExtResource( 9 )]
+margin_left = 147.0
+margin_top = 358.0
+margin_right = 211.0
+margin_bottom = 422.0
+data = ExtResource( 6 )
+
+[node name="Dereida" parent="Planetas" instance=ExtResource( 9 )]
+margin_left = 528.0
+margin_top = 525.0
+margin_right = 592.0
+margin_bottom = 589.0
+data = ExtResource( 2 )
+
+[node name="Erm" parent="Planetas" instance=ExtResource( 9 )]
+visible = false
+margin_left = 688.0
+margin_top = 445.0
+margin_right = 752.0
+margin_bottom = 509.0
+data = ExtResource( 4 )
+
+[node name="Faradan" parent="Planetas" instance=ExtResource( 9 )]
+visible = false
+margin_left = 692.0
+margin_top = 520.0
+margin_right = 756.0
+margin_bottom = 584.0
+data = ExtResource( 3 )
+
+[node name="Golosus" parent="Planetas" instance=ExtResource( 9 )]
+visible = false
+margin_left = 697.0
+margin_top = 613.0
+margin_right = 761.0
+margin_bottom = 677.0
+data = ExtResource( 5 )
+
+[node name="Intro" type="PopupPanel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -476.0
+margin_bottom = -50.0

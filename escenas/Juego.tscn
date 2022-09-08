@@ -1,14 +1,363 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://assets/fondos/STScI-01G3HA2Q1G8EMCPFWE31BEBZ9C.png" type="Texture" id=1]
+[ext_resource path="res://escenas/Juego.gd" type="Script" id=1]
+[ext_resource path="res://elementos/Espectroscopio.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/planetas/Planeta gris.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/UI/hud.png" type="Texture" id=4]
+[ext_resource path="res://assets/elementos/interferencia.jpg" type="Texture" id=5]
+[ext_resource path="res://elementos/HUD.gd" type="Script" id=6]
+[ext_resource path="res://assets/UI/flechita.png" type="Texture" id=7]
+[ext_resource path="res://assets/elementos/libro-cerrado.png" type="Texture" id=8]
+[ext_resource path="res://assets/elementos/libro-abierto.png" type="Texture" id=9]
+[ext_resource path="res://escenas/Libro.gd" type="Script" id=10]
+[ext_resource path="res://elementos/SelectorPlanetas.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/Theme.tres" type="Theme" id=12]
+[ext_resource path="res://assets/textos/planetas/Aries.png" type="Texture" id=13]
+[ext_resource path="res://assets/textos/planetas/Dereida.png" type="Texture" id=14]
+[ext_resource path="res://assets/textos/planetas/Faradan.png" type="Texture" id=15]
+[ext_resource path="res://assets/UI/botonlibro.png" type="Texture" id=16]
+[ext_resource path="res://assets/UI/botonidentificarplaneta.png" type="Texture" id=17]
+[ext_resource path="res://assets/UI/botonenviarinforme.png" type="Texture" id=18]
+[ext_resource path="res://assets/UI/botóndatosrelevantes.png" type="Texture" id=19]
+[ext_resource path="res://assets/textos/planetas/Bersekus.png" type="Texture" id=20]
+[ext_resource path="res://assets/textos/planetas/Erm.png" type="Texture" id=21]
+[ext_resource path="res://assets/textos/planetas/Golosus.png" type="Texture" id=22]
+[ext_resource path="res://assets/textos/planetas/Calandria.png" type="Texture" id=23]
+[ext_resource path="res://assets/textos/niveles/Nivel01.png" type="Texture" id=24]
+[ext_resource path="res://assets/textos/niveles/Nivel03.png" type="Texture" id=25]
+[ext_resource path="res://assets/textos/niveles/Nivel04.png" type="Texture" id=26]
+[ext_resource path="res://assets/textos/niveles/Nivel06.png" type="Texture" id=27]
+[ext_resource path="res://assets/textos/niveles/Nivel02.png" type="Texture" id=28]
+[ext_resource path="res://assets/textos/niveles/Nivel05.png" type="Texture" id=29]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 1, 0, 0, 1, 0.183333, 0, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
 [node name="Juego" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
 
-[node name="Fondo" type="TextureRect" parent="."]
+[node name="Top" type="Node" parent="."]
+
+[node name="HUD" type="Control" parent="."]
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
+margin_left = -478.0
+mouse_filter = 2
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Planeta" type="TextureRect" parent="HUD"]
+margin_top = 29.0
+margin_right = 478.0
+margin_bottom = 433.0
+hint_tooltip = "Observación directa"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
 expand = true
-stretch_mode = 6
+stretch_mode = 7
+
+[node name="Mediciones" type="VBoxContainer" parent="HUD"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 33.0
+margin_bottom = 146.0
+
+[node name="Control" type="Control" parent="HUD/Mediciones"]
+margin_right = 478.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Corrimiento" type="TextureRect" parent="HUD/Mediciones/Control"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -239.0
+margin_top = -17.0
+margin_right = 239.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource( 2 )
+expand = true
+
+[node name="Indicador" type="TextureRect" parent="HUD/Mediciones/Control"]
+unique_name_in_owner = true
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -27.0
+margin_right = -12.0
+margin_bottom = 33.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="Interferencia" type="TextureRect" parent="HUD/Mediciones/Control"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -239.0
+margin_top = -17.0
+margin_right = 239.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 7
+
+[node name="Espectrometro" parent="HUD/Mediciones" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+margin_top = 58.0
+margin_bottom = 113.0
+cantidad = 50
+
+[node name="Frame" type="TextureRect" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.0
+margin_bottom = 2.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Botones" type="HBoxContainer" parent="HUD"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 23.0
+margin_top = -237.0
+margin_right = -32.0
+mouse_filter = 2
+
+[node name="Libro" type="TextureButton" parent="HUD/Botones"]
+margin_right = 102.0
+margin_bottom = 237.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 16 )
+expand = true
+stretch_mode = 5
+
+[node name="Datos" type="TextureButton" parent="HUD/Botones"]
+margin_left = 106.0
+margin_right = 209.0
+margin_bottom = 237.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 19 )
+expand = true
+stretch_mode = 5
+
+[node name="Identificar" type="TextureButton" parent="HUD/Botones"]
+margin_left = 213.0
+margin_right = 316.0
+margin_bottom = 237.0
+hint_tooltip = "Identificar"
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 17 )
+expand = true
+stretch_mode = 5
+
+[node name="Enviar" type="TextureButton" parent="HUD/Botones"]
+margin_left = 320.0
+margin_right = 423.0
+margin_bottom = 237.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 18 )
+expand = true
+stretch_mode = 5
+
+[node name="SelectorPlanetas" parent="." instance=ExtResource( 11 )]
+visible = false
+
+[node name="Info" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+theme = ExtResource( 12 )
+text = "Para la observación nocturna cuentas con tu telescopio XD2500 y su computadora integrada,  que te dará información cuando hagas clic sobre los planetas en el cielo (los reconocerás porque son como estrellas más grandes y brillantes). Luego, podrás comparar la información recibida con la información que tienes sobre los planetas en tu Libro de Astronomía.
+
+Cada planeta tiene la siguiente información:
+
+- Imagen del planeta: es la visión del planeta que se ve desde el telescopio, lo que te permitirá identificar su color.
+
+- Corrimiento al rojo/azul: este fenómeno sucede cuando la radiación electromagnética que se emite o refleja desde un objeto, normalmente la luz visible, aparece desplazada hacia el rojo al final del espectro electromagnético. Si el espectro aparece \"corrido al rojo\" significa que el objeto que estás observando se está alejando del punto desde el que lo estás observando, mientras que el corrimiento al azul indica que se acerca.
+
+-Reflejo de la luz en los elementos del planeta: cuando la luz impacta en un planeta, la misma se refleja de manera diferente en el espectro electromagnético según la materia de la que está compuesta este planeta. 
+
+A su vez, los planetas solo se ven en el cielo nocturno en ciertas estaciones. Utiliza tu Libro y el medidor de temperatura para determinar en qué estación te encuentras.
+
+(ACLARACIÓN: tanto el corrimiento al rojo como el hecho de que se pueden determinar los elementos de un planeta por cómo refleja la luz en este son hechos astronómicos reales. En este juego están simplificados para asegurar la jugabilidad)"
+
+[node name="Libro" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+script = ExtResource( 10 )
+
+[node name="Cerrado" type="TextureButton" parent="Libro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="Abierto" type="TextureButton" parent="Libro"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+texture_normal = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="Aries" type="TextureRect" parent="Libro/Abierto"]
+margin_left = 556.0
+margin_top = 87.0
+margin_right = 906.0
+margin_bottom = 547.0
+texture = ExtResource( 13 )
+
+[node name="Aries2" type="TextureRect" parent="Libro/Abierto"]
+visible = false
+margin_left = 556.0
+margin_top = 87.0
+margin_right = 906.0
+margin_bottom = 547.0
+texture = ExtResource( 20 )
+
+[node name="Aries3" type="TextureRect" parent="Libro/Abierto"]
+visible = false
+margin_left = 556.0
+margin_top = 87.0
+margin_right = 906.0
+margin_bottom = 547.0
+texture = ExtResource( 23 )
+
+[node name="Aries4" type="TextureRect" parent="Libro/Abierto"]
+visible = false
+margin_left = 556.0
+margin_top = 87.0
+margin_right = 906.0
+margin_bottom = 547.0
+texture = ExtResource( 14 )
+
+[node name="Aries5" type="TextureRect" parent="Libro/Abierto"]
+visible = false
+margin_left = 556.0
+margin_top = 87.0
+margin_right = 906.0
+margin_bottom = 547.0
+texture = ExtResource( 21 )
+
+[node name="Aries6" type="TextureRect" parent="Libro/Abierto"]
+visible = false
+margin_left = 556.0
+margin_top = 87.0
+margin_right = 906.0
+margin_bottom = 547.0
+texture = ExtResource( 15 )
+
+[node name="Aries7" type="TextureRect" parent="Libro/Abierto"]
+visible = false
+margin_left = 556.0
+margin_top = 87.0
+margin_right = 906.0
+margin_bottom = 547.0
+texture = ExtResource( 22 )
+
+[node name="TextosNiveles" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Nivel01" type="TextureButton" parent="TextosNiveles"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 24 )
+
+[node name="Nivel02" type="TextureButton" parent="TextosNiveles"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 28 )
+
+[node name="Nivel03" type="TextureButton" parent="TextosNiveles"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 25 )
+
+[node name="Nivel04" type="TextureButton" parent="TextosNiveles"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 26 )
+
+[node name="Nivel05" type="TextureButton" parent="TextosNiveles"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 29 )
+
+[node name="Nivel06" type="TextureButton" parent="TextosNiveles"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 27 )
+
+[connection signal="pressed" from="HUD/Botones/Libro" to="HUD" method="_on_Libro_pressed"]
+[connection signal="pressed" from="HUD/Botones/Datos" to="HUD" method="_on_Datos_pressed"]
+[connection signal="pressed" from="HUD/Botones/Identificar" to="HUD" method="_on_Identificar_pressed"]
+[connection signal="pressed" from="HUD/Botones/Enviar" to="." method="_on_Enviar_pressed"]
+[connection signal="pressed" from="Libro/Cerrado" to="Libro" method="_on_Cerrado_pressed"]
+[connection signal="pressed" from="Libro/Abierto" to="Libro" method="_on_Abierto_pressed"]
+[connection signal="pressed" from="TextosNiveles/Nivel01" to="TextosNiveles" method="hide"]
+[connection signal="pressed" from="TextosNiveles/Nivel02" to="TextosNiveles" method="hide"]
+[connection signal="pressed" from="TextosNiveles/Nivel03" to="TextosNiveles" method="hide"]
+[connection signal="pressed" from="TextosNiveles/Nivel04" to="TextosNiveles" method="hide"]
+[connection signal="pressed" from="TextosNiveles/Nivel05" to="TextosNiveles" method="hide"]
+[connection signal="pressed" from="TextosNiveles/Nivel06" to="TextosNiveles" method="hide"]

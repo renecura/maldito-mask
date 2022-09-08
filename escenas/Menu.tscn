@@ -35,13 +35,23 @@ tracks/1/keys = {
 resource_name = "idle"
 loop = true
 tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:rect_position:y")
+tracks/0/path = NodePath(".:rect_position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 362, -0.25, 0, 0.25, 0, 342, -0.25, 0, 0.25, 0, 362, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 512, -0.25, 0, 0.25, 0, 512, -0.25, 0, 0.25, 0, 512, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 362, -0.25, 0, 0.25, 0, 382, -0.25, 0, 0.25, 0, 362, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
@@ -76,7 +86,7 @@ stretch_mode = 6
 anchor_right = 1.0
 margin_bottom = 240.0
 theme = ExtResource( 3 )
-text = "PATAGONIA GAME JAM"
+text = "MALDITO MASK"
 align = 1
 valign = 1
 

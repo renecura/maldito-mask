@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	SFX.play("main")
+
 func _on_Start():
 	get_tree().change_scene("res://escenas/Juego.tscn")
 

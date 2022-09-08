@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://elementos/Espectroscopio.gd" type="Script" id=1]
+
+[node name="Espectrometro" type="Control"]
+margin_top = 57.0
+margin_right = 478.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Fondo" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.09, 0.09, 0.09, 1 )
+
+[node name="Espectro" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 2
+
+[node name="Color" type="ColorRect" parent="Espectro"]
+margin_right = 478.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )

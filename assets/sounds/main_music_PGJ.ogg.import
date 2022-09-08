@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/main_music_PGJ.ogg-17320e5ec4027b3522b3918de442209c.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/main_music_PGJ.ogg"
+dest_files=[ "res://.import/main_music_PGJ.ogg-17320e5ec4027b3522b3918de442209c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

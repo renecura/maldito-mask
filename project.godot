@@ -8,11 +8,27 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "PlanetaData",
+"language": "GDScript",
+"path": "res://PlanetaData.gd"
+} ]
+_global_script_class_icons={
+"PlanetaData": ""
+}
+
 [application]
 
 config/name="PGJ2022"
 run/main_scene="res://escenas/Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Events="*res://EventBus.gd"
+GM="*res://GameManager.gd"
+SFX="*res://lib/SoundFXPlayer.tscn"
 
 [display]
 

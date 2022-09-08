@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://niveles/Nivel.gd" type="Script" id=1]
+[ext_resource path="res://elementos/data/Bersekus.tres" type="Resource" id=2]
+[ext_resource path="res://elementos/data/Calandria.tres" type="Resource" id=3]
+[ext_resource path="res://elementos/data/Aries.tres" type="Resource" id=4]
+[ext_resource path="res://elementos/Planeta.tscn" type="PackedScene" id=5]
+[ext_resource path="res://elementos/data/Golosus.tres" type="Resource" id=6]
+[ext_resource path="res://elementos/data/Dereida.tres" type="Resource" id=7]
+[ext_resource path="res://assets/elementos/luna.png" type="Texture" id=8]
+[ext_resource path="res://assets/elementos/starlonk.png" type="Texture" id=9]
+[ext_resource path="res://elementos/data/Faradan.tres" type="Resource" id=10]
+[ext_resource path="res://elementos/Cielo.tscn" type="PackedScene" id=11]
+[ext_resource path="res://elementos/data/Erm.tres" type="Resource" id=12]
+
+[node name="Mirar sin instrumentos" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+estacion = 3
+
+[node name="Referencia" parent="." instance=ExtResource( 11 )]
+
+[node name="Luna" type="TextureRect" parent="."]
+margin_left = 446.0
+margin_top = 189.0
+margin_right = 676.0
+margin_bottom = 434.0
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="StarLonk" type="TextureRect" parent="."]
+margin_left = 253.0
+margin_top = 137.0
+margin_right = 313.0
+margin_bottom = 745.0
+rect_rotation = -20.8413
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="Planetas" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Aries" parent="Planetas" instance=ExtResource( 5 )]
+margin_left = 587.0
+margin_top = 150.0
+margin_right = 651.0
+margin_bottom = 214.0
+data = ExtResource( 4 )
+corrimiento_bloqueada = true
+elementos_bloqueada = true
+
+[node name="Bersekus" parent="Planetas" instance=ExtResource( 5 )]
+visible = false
+margin_left = 405.0
+margin_top = 323.0
+margin_right = 469.0
+margin_bottom = 387.0
+data = ExtResource( 2 )
+imagen_bloqueada = true
+elementos_bloqueada = true
+
+[node name="Calandria" parent="Planetas" instance=ExtResource( 5 )]
+margin_left = 350.0
+margin_top = 516.0
+margin_right = 414.0
+margin_bottom = 580.0
+data = ExtResource( 3 )
+imagen_bloqueada = true
+corrimiento_bloqueada = true
+
+[node name="Dereida" parent="Planetas" instance=ExtResource( 5 )]
+margin_left = 343.0
+margin_top = 221.0
+margin_right = 407.0
+margin_bottom = 285.0
+data = ExtResource( 7 )
+imagen_bloqueada = true
+corrimiento_bloqueada = true
+elementos_bloqueada = true
+
+[node name="Erm" parent="Planetas" instance=ExtResource( 5 )]
+margin_left = 694.0
+margin_top = 440.0
+margin_right = 758.0
+margin_bottom = 504.0
+data = ExtResource( 12 )
+corrimiento_bloqueada = true
+elementos_bloqueada = true
+
+[node name="Faradan" parent="Planetas" instance=ExtResource( 5 )]
+visible = false
+margin_left = 346.0
+margin_top = 169.0
+margin_right = 410.0
+margin_bottom = 233.0
+data = ExtResource( 10 )
+imagen_bloqueada = true
+
+[node name="Golosus" parent="Planetas" instance=ExtResource( 5 )]
+visible = false
+margin_left = 250.0
+margin_top = 507.0
+margin_right = 314.0
+margin_bottom = 571.0
+data = ExtResource( 6 )
+imagen_bloqueada = true

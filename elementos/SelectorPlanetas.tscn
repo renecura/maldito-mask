@@ -1,0 +1,238 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/planetas/Planeta gris.jpg" type="Texture" id=2]
+[ext_resource path="res://elementos/SelectorPlanetas.gd" type="Script" id=3]
+
+[node name="SelectorPlanetas" type="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -466.5
+margin_top = -280.0
+margin_right = 466.5
+margin_bottom = 280.0
+color = Color( 0.0745098, 0.0745098, 0.0784314, 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Lineas" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LineaSuperior" type="HBoxContainer" parent="Lineas"]
+margin_right = 933.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Aries" type="TextureButton" parent="Lineas/LineaSuperior"]
+margin_right = 230.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Lineas/LineaSuperior/Aries"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.5
+margin_top = -39.5
+margin_right = 103.5
+margin_bottom = 39.5
+theme = ExtResource( 1 )
+text = "ARIES"
+align = 1
+valign = 1
+
+[node name="Bersekus" type="TextureButton" parent="Lineas/LineaSuperior"]
+margin_left = 234.0
+margin_right = 464.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Lineas/LineaSuperior/Bersekus"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.5
+margin_top = -39.5
+margin_right = 103.5
+margin_bottom = 39.5
+theme = ExtResource( 1 )
+text = "BÉRSEKUS"
+align = 1
+valign = 1
+
+[node name="Calandria" type="TextureButton" parent="Lineas/LineaSuperior"]
+margin_left = 468.0
+margin_right = 698.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Lineas/LineaSuperior/Calandria"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.5
+margin_top = -39.5
+margin_right = 103.5
+margin_bottom = 39.5
+theme = ExtResource( 1 )
+text = "CALANDRIA"
+align = 1
+valign = 1
+
+[node name="Dereida" type="TextureButton" parent="Lineas/LineaSuperior"]
+margin_left = 702.0
+margin_right = 933.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Lineas/LineaSuperior/Dereida"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.5
+margin_top = -39.5
+margin_right = 103.5
+margin_bottom = 39.5
+theme = ExtResource( 1 )
+text = "DEREIDA"
+align = 1
+valign = 1
+
+[node name="LineaInferior" type="HBoxContainer" parent="Lineas"]
+margin_top = 282.0
+margin_right = 933.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Erm" type="TextureButton" parent="Lineas/LineaInferior"]
+margin_right = 230.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Lineas/LineaInferior/Erm"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.5
+margin_top = -39.5
+margin_right = 103.5
+margin_bottom = 39.5
+theme = ExtResource( 1 )
+text = "ERM"
+align = 1
+valign = 1
+
+[node name="Farandan" type="TextureButton" parent="Lineas/LineaInferior"]
+margin_left = 234.0
+margin_right = 464.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Lineas/LineaInferior/Farandan"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.5
+margin_top = -39.5
+margin_right = 103.5
+margin_bottom = 39.5
+theme = ExtResource( 1 )
+text = "FARANDAN"
+align = 1
+valign = 1
+
+[node name="Golosus" type="TextureButton" parent="Lineas/LineaInferior"]
+margin_left = 468.0
+margin_right = 698.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Lineas/LineaInferior/Golosus"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.5
+margin_top = -39.5
+margin_right = 103.5
+margin_bottom = 39.5
+theme = ExtResource( 1 )
+text = "GOLOSUS"
+align = 1
+valign = 1
+
+[node name="NO" type="TextureButton" parent="Lineas/LineaInferior"]
+margin_left = 702.0
+margin_right = 933.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Lineas/LineaInferior/NO"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.5
+margin_top = -39.5
+margin_right = 103.5
+margin_bottom = 39.5
+theme = ExtResource( 1 )
+text = "BORRAR"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Lineas/LineaSuperior/Aries" to="." method="_on_pressed" binds= [ "Aries" ]]
+[connection signal="pressed" from="Lineas/LineaSuperior/Bersekus" to="." method="_on_pressed" binds= [ "Bersekus" ]]
+[connection signal="pressed" from="Lineas/LineaSuperior/Calandria" to="." method="_on_pressed" binds= [ "Calandria" ]]
+[connection signal="pressed" from="Lineas/LineaSuperior/Dereida" to="." method="_on_pressed" binds= [ "Dereida" ]]
+[connection signal="pressed" from="Lineas/LineaInferior/Erm" to="." method="_on_pressed" binds= [ "Erm" ]]
+[connection signal="pressed" from="Lineas/LineaInferior/Farandan" to="." method="_on_pressed" binds= [ "Farandan" ]]
+[connection signal="pressed" from="Lineas/LineaInferior/Golosus" to="." method="_on_pressed" binds= [ "Golosus" ]]
+[connection signal="pressed" from="Lineas/LineaInferior/NO" to="." method="_on_pressed" binds= [ "" ]]
